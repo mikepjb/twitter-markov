@@ -11,7 +11,7 @@
                    (str/split ( slurp "sample_tweets.txt") #"\s")))))
 
 (defn next-word [current-word n]
-  (if (zero? n) [] (cons current-word (next-word (rand-nth (db current-word)) (- n 1))))
+  (if (.endsWith current-word ".") [current-word] (cons current-word (next-word (rand-nth (db current-word)) (- n 1))))
   )
 
 ;; (next-word
