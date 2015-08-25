@@ -3,3 +3,5 @@ A captcha asks me to identify pies, then candy, then cabbage. It says "paste thi
 Past Imagemagick experience was 99% being mad that it was so hard to compile, but using it is actually nice. Even the commands are nice.
 Split a GIF into frames, combine four into a 2x2 image, grayscale it, and add transparency... all with Imagemagick command line tools!
 Programmer's Oxford comma: the last item in an array or hash MUST be followed by a comma.
+I can generate that base64ed PNG from dot source code on every web request and it'll respond with less latency than the average web app.
+grayscale it
