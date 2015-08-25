@@ -10,9 +10,15 @@
            (filter #(not (str/blank? %))
                    (str/split ( slurp "sample_tweets.txt") #"\s")))))
 
-;; Prints var
-(def word (rand-nth (keys db)))
+(defn next-word [current-word n]
+  (if (zero? n) [] (cons current-word (next-word (rand-nth (db current-word)) (- n 1))))
+  )
 
-(repeatedly 10
-            #(print word (rand-nth (db word)) ""))
+;; (next-word
+;; (rand-nth (keys db)) 10)
+
+(str/join " " (next-word "Split" 10))
+
+
+
 
