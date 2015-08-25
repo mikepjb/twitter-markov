@@ -2,4 +2,4 @@
 (require '[clojure.string :as str])
 
 ;;Read lines
-(str/split (slurp "sample_tweets.txt") #"\W")
+(partition 2 1 (filter #(not (str/blank? %)) (str/split (slurp "sample_tweets.txt") #"\W")))
