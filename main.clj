@@ -5,7 +5,7 @@
 (def db (reduce (fn [database pair] (assoc database (first pair) (cons (second pair) (get database (first pair)))))
   {}
   (partition 2 1
-           (filter #(not (str/blank? %))
+           (filter (complement str/blank?)
                    (str/split (slurp "sample_tweets.txt") #"\s")))))
 
 (defn next-word [current-word]
