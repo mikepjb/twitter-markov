@@ -8,10 +8,11 @@
   {}
   (partition 2 1
            (filter #(not (str/blank? %))
-                   (str/split ( slurp "sample_tweets.txt") #"\W")))))
+                   (str/split ( slurp "sample_tweets.txt") #"\s")))))
 
 ;; Prints var
 (def word (rand-nth (keys db)))
 
-(rand-nth (db word))
+(repeatedly 10
+            #(print word (rand-nth (db word)) ""))
 
