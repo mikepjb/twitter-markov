@@ -1,8 +1,8 @@
 (require '[clojure.string :as str])
 
-(def db 
+(def db
   (reduce
-    (fn [database pair] (update-in database [(first pair)] #(cons (second pair) %)))
+    (fn [database pair] (update database (first pair) #(cons (second pair) %)))
     {}
     (partition 2 1
       (str/split (slurp "sample_tweets.txt") #"\s+"))))
